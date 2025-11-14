@@ -1,0 +1,186 @@
+/* NASA-Inspired Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+               'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+               'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: #ffffff;
+  background: #000814;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Enhanced starry night background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Large bright stars */
+    radial-gradient(3px 3px at 200px 150px, #ffffff 0%, transparent 50%),
+    radial-gradient(2px 2px at 800px 200px, #ffffff 0%, transparent 50%),
+    radial-gradient(3px 3px at 1400px 300px, #ffffff 0%, transparent 50%),
+    radial-gradient(2px 2px at 600px 450px, #ffffff 0%, transparent 50%),
+    radial-gradient(3px 3px at 1200px 600px, #ffffff 0%, transparent 50%),
+    
+    /* Medium twinkling stars */
+    radial-gradient(2px 2px at 150px 300px, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 450px 100px, rgba(255, 255, 255, 0.8) 0%, transparent 50%),
+    radial-gradient(2px 2px at 950px 250px, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 1300px 450px, rgba(255, 255, 255, 0.8) 0%, transparent 50%),
+    radial-gradient(2px 2px at 300px 650px, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 750px 700px, rgba(255, 255, 255, 0.8) 0%, transparent 50%),
+    
+    /* Small distant stars */
+    radial-gradient(1px 1px at 350px 80px, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
+    radial-gradient(1px 1px at 680px 320px, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+    radial-gradient(1px 1px at 1100px 180px, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
+    radial-gradient(1px 1px at 250px 480px, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+    radial-gradient(1px 1px at 850px 520px, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
+    radial-gradient(1px 1px at 1350px 120px, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+    radial-gradient(1px 1px at 500px 750px, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
+    radial-gradient(1px 1px at 1050px 800px, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+    
+    /* Colored celestial objects */
+    radial-gradient(2px 2px at 1000px 100px, rgba(135, 206, 250, 0.8) 0%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 400px 600px, rgba(255, 215, 0, 0.7) 0%, transparent 50%),
+    radial-gradient(1px 1px at 1200px 400px, rgba(255, 182, 193, 0.6) 0%, transparent 50%),
+    
+    /* Deep space gradient base */
+    linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #0d1b2a 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: starTwinkle 8s ease-in-out infinite alternate,
+             cosmicDrift 30s ease-in-out infinite;
+  z-index: -2;
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.8;
+    filter: brightness(1);
+  }
+  25% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(0.9);
+  }
+  75% {
+    opacity: 1;
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes cosmicDrift {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  33% {
+    transform: translateY(-10px) scale(1.02);
+  }
+  66% {
+    transform: translateY(5px) scale(0.98);
+  }
+}
+
+/* Enhanced nebula and cosmic dust effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Distant galaxies and nebulae */
+    radial-gradient(ellipse 400px 200px at 20% 30%, rgba(138, 43, 226, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 150px at 80% 70%, rgba(75, 0, 130, 0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 250px at 60% 20%, rgba(25, 25, 112, 0.02) 0%, transparent 80%),
+    
+    /* Cosmic dust clouds */
+    radial-gradient(ellipse 600px 100px at 40% 80%, rgba(72, 61, 139, 0.02) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 80px at 90% 40%, rgba(106, 90, 205, 0.015) 0%, transparent 70%),
+    
+    /* Aurora-like effect */
+    radial-gradient(ellipse at 70% 10%, rgba(0, 255, 127, 0.015) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 90%, rgba(255, 20, 147, 0.01) 0%, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  animation: nebulaDrift 35s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes nebulaDrift {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateX(0) rotate(0deg);
+  }
+  33% {
+    opacity: 1;
+    transform: translateX(15px) rotate(0.3deg);
+  }
+  66% {
+    opacity: 0.8;
+    transform: translateX(-8px) rotate(-0.2deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Remove old animations */
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* NASA-Inspired CSS Variables */
+:root {
+  --primary-color: #0066cc;
+  --secondary-color: #ffd700;
+  --accent-color: #00ccff;
+  --text-light: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.8);
+  --background-dark: #000814;
+  --background-navy: #001d3d;
+  --background-blue: #003566;
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-glow: 0 4px 20px rgba(0, 204, 255, 0.3);
+  --shadow-deep: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --gradient-cosmic: linear-gradient(135deg, #ffd700 0%, #00ccff 50%, #ffd700 100%);
+}

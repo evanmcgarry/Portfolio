@@ -1,0 +1,306 @@
+/* NASA-Inspired Projects Component */
+.projects {
+  padding: 5rem 0;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 40% 30%, rgba(106, 90, 205, 0.02) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 80%, rgba(72, 61, 139, 0.015) 0%, transparent 70%);
+  animation: projectsFloat 30s ease-in-out infinite alternate;
+}
+
+@keyframes projectsFloat {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-25px);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 50%,
+    #ffd700 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 
+    0 0 20px rgba(0, 102, 204, 0.5),
+    0 0 40px rgba(0, 102, 204, 0.3);
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #0066cc, #4da6ff);
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(0, 102, 204, 0.6);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.projectCard {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 29, 61, 0.8) 0%,
+    rgba(0, 8, 20, 0.9) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--secondary);
+  box-shadow: 
+    0 12px 40px rgba(0, 102, 204, 0.2),
+    0 0 30px rgba(0, 102, 204, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.projectImage {
+  height: 200px;
+  background-color: var(--background-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.projectImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.projectCard:hover .projectImage img {
+  transform: scale(1.05);
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.projectContent {
+  padding: 1.5rem;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 50%,
+    #ffd700 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 
+    0 0 15px rgba(0, 102, 204, 0.4),
+    0 0 25px rgba(0, 102, 204, 0.2);
+  animation: titlePulse 4s ease-in-out infinite alternate;
+  transition: all 0.3s ease;
+}
+
+.projectTitle:hover {
+  transform: translateY(-2px);
+  text-shadow: 
+    0 0 20px rgba(0, 102, 204, 0.6),
+    0 0 35px rgba(0, 102, 204, 0.4),
+    0 0 50px rgba(0, 102, 204, 0.2);
+}
+
+@keyframes titlePulse {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+.projectDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.technology {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 204, 0.2) 0%,
+    rgba(77, 166, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(10px);
+  color: #4da6ff;
+  padding: 0.375rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 102, 204, 0.4);
+  transition: all 0.3s ease;
+}
+
+.technology:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 204, 0.4) 0%,
+    rgba(77, 166, 255, 0.3) 100%
+  );
+  color: #ffffff;
+  border-color: #4da6ff;
+  box-shadow: 0 0 15px rgba(0, 102, 204, 0.3);
+  transform: translateY(-2px);
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.projectLink {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  text-align: center;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.projectLink {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.projectLink:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.projectLink.primaryLink {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.projectLink.primaryLink:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .projects {
+    padding: 3rem 0;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .projectContent {
+    padding: 1.25rem;
+  }
+  
+  .projectTitle {
+    font-size: 1.125rem;
+  }
+  
+  .projectDescription {
+    font-size: 0.9rem;
+  }
+  
+  .projectLinks {
+    flex-direction: column;
+  }
+  
+  .projectLink {
+    text-align: center;
+  }
+}
