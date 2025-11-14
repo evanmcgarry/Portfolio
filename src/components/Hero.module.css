@@ -333,13 +333,14 @@
 @media (max-width: 768px) {
   .hero {
     padding: 1rem;
+    min-height: calc(100vh - 70px); /* Account for mobile header */
   }
   
   .container {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
-    padding: 0 1rem;
+    padding: 1rem;
   }
   
   .title {
